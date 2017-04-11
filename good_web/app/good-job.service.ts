@@ -15,9 +15,9 @@ export class GoodJobService{
   public static hr_person: HrPerson
   public static company: Company
 
-  //public base_url: string = "ec2-34-207-144-227.compute-1.amazonaws.com:4000/"
-  public base_url: string = "localhost:4000/"
-  
+  public base_url: string = "ec2-34-207-144-227.compute-1.amazonaws.com:4000/"
+  //public base_url: string = "localhost:4000/"
+
   url: string = "http://"+this.base_url
 
   //base64 encoded

@@ -1,8 +1,10 @@
-<img src="Bridge4.jpg" id="fg" alt="">
+<img src="app/template/images/Bridge4.jpg" id="dg" alt="">
 <div class="settings">{{user.name}}'s Settings Page</div>
-
+<br>
  <div>
-     <div class="addpicture">Add Picture:</div>
-     <input type="file" accept="image/*" (change)="changeListener($event)">
+     <div class="addpicture">Add Your Profile Picture Below:</div>
+     <br>
+     <div class="addpicture"> <input type="file" accept="image/*" (change)="changeListener($event)"></div>
  </div>
- <div><img height="200" alt="Embedded Image" src={{user.picture}}><div>
+ <br>
+ <div class="addpicture"><img height="200" alt="Embedded Image" src={{user.picture}}><div>
