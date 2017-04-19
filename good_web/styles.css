@@ -48,16 +48,25 @@ a {
   cursor: hand;
   cursor: pointer;
 }
-.logoutbutton{
-  font-family: 'Quicksand', sans-serif  !important;
-  background-color: #e6e6e6;
+.gear{
   border: none;
   padding: 5px 10px;
   border-radius: 7px;
+  cursor: pointer;
+  cursor: hand;
+}
+.logoutbutton{
+  font-family: 'Quicksand', sans-serif  !important;
+  background-color:  #e6e6e6;
+  border-color: black;
+  border: none;
+  padding: 1px 6px;
+  border-radius: 0;
   font-size: 13.5px;
   cursor: pointer;
   cursor: hand;
   margin-left: 2px;
+  margin-bottom: 0;
 }
 .logoutbutton:hover{
   background-color: #e6e6e6;
@@ -395,14 +404,7 @@ nav a.router-link-active {
   padding-bottom: 1em;
   padding-right: 0%;
 }
-.gear{
-  background-color: clear;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 7px;
-  cursor: pointer;
-  cursor: hand;
-}
+
 .noti{
   font-family: 'Quicksand', sans-serif;
   cursor: hand;
@@ -414,9 +416,14 @@ nav a.router-link-active {
   cursor: pointer;
   cursor: hand;
   margin-left: 30%;
+  padding-bottom: 0px;
 }
 .dropdown-menu{
   opacity: 0.75;
+  padding-bottom: 0px;
+}
+.logoup{
+  margin-left: 35%;
 }
 .Glogo{
   cursor: hand;
@@ -426,6 +433,13 @@ nav a.router-link-active {
     font-family: 'Quicksand', sans-serif;
     cursor: hand;
 }
+.logset{
+  background-color:  #b3b3b3;
+  top: 0;
+  bottom: 0;
+
+}
+.panel-group
 .logonav{
   text-align: center;
 
@@ -448,13 +462,8 @@ nav a.router-link-active {
 
 /* Panel stuff */
 .panel-heading {
-    background-color:#686d75;
-    border-color: #686d75;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 3px;
     text-align: left;
-    padding-top: 5px;
+    padding-top;
     margin-bottom: 1%;
 }
 .panel-title{
@@ -629,8 +638,11 @@ html {height: 101%;}
   font-weight: bold;
   font-size: 20px;
 }
+.picbr{
+  height: -1500%;
+}
 .addpicture{
-  font-size: 20px;
+  font-size: 25px;
   font-family:  'Quicksand', sans-serif;
   font-weight: bold;
   text-align: center;

@@ -4,7 +4,10 @@
 
  <div>
    <br>
-     <div class="addpicture">Add A Company Logo</div>
-     <input type="file" accept="image/*" (change)="changeListener($event)">
+   <br>
+     <div class="addpicture">Add A Company Logo:</div>
+     <div style="height:4px;"><br></div>
+     <input class="logoup" type="file" accept="image/*" (change)="changeListener($event)">
  </div>
- <div><img height="200" alt="Embedded Image" src={{company.logo}}><div>
+ <br>
+ <div align=center><img height="200" alt="Embedded Image" src={{company.logo}}><div>

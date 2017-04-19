@@ -1,21 +1,22 @@
 <!-- notification.component.ts -->
 
 <div class="btn-group">
-  <button class="btn btn-default btn-sm dropdown-toggle"
-  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class=notnum>
     <img class ="Glogo" src="app/template/images/goodjob_G.png" width="40" height="32" (click)="home()"/> ({{size}})
   </div>
    <span class="caret"></span>
   </button>
 
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu" style="padding-bottom:0px; margin-bottom:0%;" >
     <li *ngFor="let notification of notifications; let i = index;">
      <div class ="noti" (click)="remove_notification(i)">{{notification}}</div>
     </li>
     <br>
-    <li> <button class="logoutbutton" (click)="logout()">Logout</button>
-   <img align="right" class ="gear" src="app/template/images/gear-2.png" width="42" height="30" (click)="settings()" /></li>
+    <li class="logset">
+      <button class="logoutbutton" (click)="logout()">Logout</button>
+      <img align="right" class ="gear" src="app/template/images/gear-2.png" width="42" height="30" (click)="settings()" />
+    </li>
 
   </ul>
 </div>
