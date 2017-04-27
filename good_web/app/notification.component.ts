@@ -4,6 +4,7 @@ import { Router} from '@angular/router';
 import { StatsData } from './data-class';
 import { GoodJobService } from './good-job.service';
 import { PhoenixChannelService } from './phoenix.channels.service'
+import { MessageService } from "./message-service";
 
 @Component({
   selector: 'live-notifications',
@@ -16,7 +17,7 @@ export class GoodNotification{
   socket: any
   size: number
  
-  constructor(private goodJobService: GoodJobService, phoenixChannel: PhoenixChannelService, private router: Router) {
+  constructor(private goodJobService: GoodJobService, phoenixChannel: PhoenixChannelService, private router: Router, private messageService: MessageService) {
      phoenixChannel.socket.connect();
      console.log('Constructed');
      let channel_name: string = "notifications:" + goodJobService.get_user().company
@@ -38,6 +39,7 @@ export class GoodNotification{
   update(notification: any){
     console.log(notification)
     this.notifications.push(notification.message)
+    this.messageService.sendLike(notification)
     this.size = this.size + 1
   }
 

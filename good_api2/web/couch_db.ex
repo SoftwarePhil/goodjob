@@ -182,6 +182,7 @@ defmodule GoodApi2.CouchDb do
         end
     end
 
+    #this should be moved to Job model
     def like(job_name, user_name, "like") do
         with {:found, user_result}  <- valid_document?(user_name, "job seeker not found"),
              {:found, job_result}   <- valid_document?(job_name, "job not found"),
@@ -191,7 +192,8 @@ defmodule GoodApi2.CouchDb do
              nil                    <- Enum.find(job["active_chats"], fn(user)->user==user_name end) do 
                 update_document(job, "likes", add_to_list(job["likes"], user_name), "user added to liked jobs")
                 update_document(user, "seen", add_to_list(user["seen"], job_name), "job added to seen")
-                NotificationChannel.send_notification(job["company"], "new like on #{job["name"]}")
+                IO.inspect([job["company"], %{message: "new like on #{job["name"]}", state: user_name, actor: job["name"]}])
+                NotificationChannel.send_notification(job["company"], %{message: "new like on #{job["name"]}", state: user_name, actor: job["name"]})
                 {:ok, "job liked"}
         else
             {:error, message}       -> {:error, message}

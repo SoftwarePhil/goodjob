@@ -5,6 +5,7 @@ import { CreateJob} from './create_job.component';
 import { Routes } from '@angular/router';
 import { MessageService } from "./message-service";
 import { FormBuilder, Validators } from '@angular/forms';
+import { Subscription } from "rxjs";
 
 
 @Component({
@@ -29,6 +30,7 @@ export class JobPanel implements OnInit{
   choices: string[] = ["part-time", "full-time", "seasonal", "salary"]
   selectedValue: string;
   tag_display: string
+  new_like: Subscription;
 
   constructor(private goodJobService: GoodJobService, private messageService: MessageService, public fb: FormBuilder) {
     this.job = goodJobService.fetch_null_job()
@@ -36,6 +38,8 @@ export class JobPanel implements OnInit{
     let id = JobPanel.counter;
     this.strId = "collapse"+id;
     this.strIdH = "#collapse"+id;
+    //need to add job name to message ..
+    this.new_like = this.messageService.getJobLike().subscribe(message=>this.add_user_to_likes(message))
   }
 
 
@@ -173,5 +177,15 @@ export class JobPanel implements OnInit{
     }
 
     return str
+  }
+
+  add_user_to_likes(message: any){
+    let user = message.state
+    let job_name = message.actor
+    console.log(message)
+    
+    if(job_name == this.job.name){
+      this.job.likes.push(user)
+    }
   }
 }
